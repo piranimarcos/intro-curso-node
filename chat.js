@@ -7,6 +7,7 @@ var server = net.createServer(function (socket) {
       
       socket.on("data", function(d){
         sockets.forEach(function(v,i){
+	  v.write(d);
 	  if(v!==s){
             v.write(d);    
 	  }
